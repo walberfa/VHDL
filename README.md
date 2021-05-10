@@ -51,6 +51,31 @@ Obedece a tabela verdade a seguir:
 | 110 | src0 and src1 |
 | 111 | src0 or src1 |
 
+<h2> greater_than </h2>
+Este greater than é um comparador de 2 bits cuja saída fica em nível lógico alto quando A é maior que B.
+
+Deste modo, o circuito obedecerá a seguinte tabela verdade: 
+
+| a | b  | a > b |
+| ------ | -------- | ------- |
+| 00 | 00 | 0 |
+| 00 | 01 | 0 |
+| 00 | 10 | 0 |
+| 00 | 11 | 0 |
+| 01 | 00 | 1 |
+| 01 | 01 | 0 |
+| 01 | 10 | 0 |
+| 01 | 11 | 0 |
+| 10 | 00 | 1 |
+| 10 | 01 | 1 |
+| 10 | 10 | 0 |
+| 10 | 11 | 0 |
+| 11 | 00 | 1 |
+| 11 | 01 | 1 |
+| 11 | 10 | 1 |
+| 11 | 11 | 0 |
+
+
 
 <h2> Os códigos podem ser testados no https://www.edaplayground.com/ </h2>
   
