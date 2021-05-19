@@ -33,7 +33,7 @@ begin
   	wait for 10 ns; 
     reset <= '0';
 
-    wait for 100 ns;
+    wait for 200 ns;
     
     wait;
   
@@ -41,18 +41,18 @@ begin
 
   clocking: process
   begin
+  
+    for i in 0 to 8 loop
     
-    while reset = '0' loop
-      
       clk <= '0';
       wait for clock_period/2;
       
       clk <= '1';
       wait for clock_period/2;
       
-    end loop;
-    
+      end loop;
     wait;
+  
   end process;
 
 end;
