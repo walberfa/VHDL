@@ -18,7 +18,6 @@ architecture bench of ring_counter_tb is
   signal q: std_logic_vector (3 downto 0) ;
 
   constant clock_period: time := 10 ns;
-  signal stop_the_clock: boolean;
 
 begin
   
@@ -26,18 +25,15 @@ begin
                                reset => reset,
                                q     => q );
 
-  stimulus: process
+  reseting: process
   begin
   
-  	wait for 100 ns;
-  
- 	reset <= '1';
+    reset <= '1';
          
-  	wait for 100 ns; 
-         
+  	wait for 10 ns; 
     reset <= '0';
 
-    stop_the_clock <= true;
+    wait for 100 ns;
     
     wait;
   
@@ -45,7 +41,9 @@ begin
 
   clocking: process
   begin
-    while not stop_the_clock loop
+    
+    while reset = '0' loop
+      
       clk <= '0';
       wait for clock_period/2;
       
@@ -53,6 +51,7 @@ begin
       wait for clock_period/2;
       
     end loop;
+    
     wait;
   end process;
 
