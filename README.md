@@ -76,6 +76,24 @@ Deste modo, o circuito obedecerá a seguinte tabela verdade:
 | 11 | 11 | 0 |
 
 
+<h2> ring_counter </h2>
+
+O ring counter é um contador cíclico que muda de estado a cada ciclo de clock, na borda de subida.
+
+Se o reset está em nível lógico alto, a saída é "0001", mas senão, então o 1 da saída vai deslocar para a direita a cada novo ciclo. 
+
+Isso pode ser melhor percebido na tabela verdade abaixo:
+
+| reset | clock  | q |
+| ------ | -------- | ------- |
+| 1 | x | 0001 |
+| 0 | high | 1000 |
+| 0 | high | 0100 |
+| 0 | high | 0010 |
+| 0 | high | 0001 |
+| 0 | high | 1000 |
+
+
 
 <h2> Os códigos podem ser testados no https://www.edaplayground.com/ </h2>
   
