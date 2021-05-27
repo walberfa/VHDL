@@ -18,7 +18,6 @@ architecture bench of lfsr4_tb is
   signal q: std_logic_vector (3 downto 0) ;
 
   constant clock_period: time := 10 ns;
- -- signal stop_the_clock: boolean;
 
 begin
 
